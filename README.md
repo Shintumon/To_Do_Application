@@ -27,22 +27,22 @@ ToDo Web App using Python3 Django
 - Inside the settings.py file of the To_Do_Project, add the app_name under Installed_Apps.
 
 - Set the DIRS path under Templates section of settings.py
-`'DIRS': [os.path.join(BASE_DIR, 'TEMPLATES')]`
+  `'DIRS': [os.path.join(BASE_DIR, 'TEMPLATES')]`
 
 - connect the urls of movie_project with movie_app
-  ==To_Do_Project.urls:==
-  `path('', include("To_Do_App.urls"))`
+  - To_Do_Project.urls:
+    `path('', include("To_Do_App.urls"))`
 
-  ==To_Do_App.urls:==
-  ```
-  from django.urls import path
-  from . import views
-  urlpatterns = [
-    path('',views.index, name='index'),
-  ]
-  ```
+  - To_Do_App.urls:
+    ```
+    from django.urls import path
+    from . import views
+    urlpatterns = [
+      path('',views.index, name='index'),
+    ]
+    ```
 - Open views.py of the app and create the required functions
-`return render(request,"contact.html")`
+  `return render(request,"contact.html")`
 
 ### Create Models:
 - To_Do_App: models.py
