@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+    {% block title %}
+        <title>Update Task - ToDo Application</title>
+    {% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid">
+      <div class ="row">
+        <div class="col-md-12">
+          <div class="banner">
+            <div class="banner-text">
+              <h1>My ToDo Application</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row" style="justify-content: center">
+          <div class="col-md-6">
+              <br><br><h2> Update Task:</h2>
+              <form method='POST' class="p-3 shadow">
+                {% csrf_token %}
+                  <div class="form-group">
+                    <div class="shadow card text-dark bg-light border-success mb-3" >
+                      <div class="card-body">
+                        <h5 class="card-title">Please update the task details:</h5><br>
+        <!--                  {{f.as_p}}-->
+                          <div class="form-group">
+                            <label for="name" class="form-label">Update Task Name</label>
+                            <input type="text" class="form-control" name="name" value="{{task.name}}">
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="priority" class="form-label">Update Priority</label>
+                            <input type="text" class="form-control" name="priority" value="{{task.priority}}">
+                            <br>
+                        </div>
+                          <div class="form-group">
+                            <label for="date" class="form-label">Update Date</label>
+                            <input type="date" class="form-control" name="date" value="{{task.date|date:'Y-m-d'}}">
+                            <br>
+                          </div>
+                        <button type="submit" class="btn btn-success ">Update</button><br>
+                          </div>
+                        </div>
+                      </div>
+              </form>
+          </div>
+      </div>
+    </div>
+
+
+{% endblock %}
